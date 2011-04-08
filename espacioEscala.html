@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="generator" content="http://www.nongnu.org/elyxer/"/>
+<meta name="create-date" content="2011-04-08"/>
+<link rel="stylesheet" href="http://elyxer.nongnu.org/lyx.css" type="text/css" media="all"/>
+<title>Espacio-Escala en Imágenes</title>
+</head>
+<body>
+<div id="globalWrapper">
+<h1 class="title">
+Espacio-Escala en Imágenes
+</h1>
+<div class="Unindented">
+En el sentido más general, la escala en imágenes representa un grado de libertad expresado por una señal. La escala es simplemente una manifestación de un cambio en el tamaño espacial o escala, de un atributo, región o agrupamiento. Debido a que las cámaras digitales hacen un muestreo espacial de la proyección del mundo real en el plano focal mediante un dipositivo de medición (CCD), la cantidad de información presente en una imagen cambia cuando un objeto cambia su distancia relativa a la cámara. Es por eso que la imagen de un objeto distante, sólo genera una pequeña cantidad de muestras que a su vez tienen poca frecuencias espaciales. Cuando nos acercamos al objeto, su proyección aumenta de tamaño obteniendo quizás un rango mayor de frecuencias espaciales que se manifiestan como el nivel de “detalle” en la superficie del objeto. La estructura general del objeto es descrita con mayor detalle cuando al disminuir la distancia, pero no se transforma de manera radical. El análisis de la evolución de la estructura de los objetos en términos de los detalles que emergen al aumentar el tamaño de la imagen incorpora el concepto del espacio-escala multiresolución.
+</div>
+<div class="Indented">
+Poder reconocer a los objetos sin importar la cantidad de pixels que ocupan en una imagen es una característica deseable. De ello se ocupa el análisis de invariantes a la escala. Un acercamiento feasible para alcanzar el análisis invariable a la escala es muestrear el espacio-escala con la suficiente densidad de tal manera que nos sea posible rastrear la evolución de los detalles que van emergiendo cuando pasamos de una escala a otra.
+</div>
+<div class="Indented">
+El análisis en diferentes escalas es necesario debido a que:
+</div>
+<ul>
+<li>
+Las estructuras y atributos presentes en una imagen existen a lo largo de un rango continuo de tamaños.
+</li>
+<li>
+El tamaño de los atributos específicos en una imagen no es conocido con anterioridad.
+</li>
+<li>
+Es posible seguir el surgimiento de estructuras a lo largo de las escalas, y utilizar estas técnicas para obtener un procesamiento independiente a la escala que sea además computacionalmente eficiente.
+</li>
+
+</ul>
+<h3 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--1"></a>Espacios-Escala Gaussianos
+</h3>
+<div class="Unindented">
+Según Lindeberg: “La representación espacio-escala es un tipo especial de representación multi-escala que incluye un parámetro contínuo de escala y preserva el mismo muestreo espacial para todas las escalas”. Además: “la representación espacio-escala de una señal es empotrar la señal original en una familia de señales de un sólo parámetro construidas mediante la convolución con señales Gaussianas de varianza creciente”.
+</div>
+<div class="Indented">
+Las propiedades deseables para el procesamiento multi-escala son:
+</div>
+<ul>
+<li>
+Invarianza a los desplazamientos: Isotropía espacial, todas las posiciones espaciales son tratadas en forma equitativa.
+</li>
+<li>
+Invarianza a la escala: Homogeneidad espacial, todas las escalas espaciales son tratadas por igual.
+</li>
+<li>
+Causalidad: <ul>
+<li>
+No deben crearse nuevas curvas de nivel en los espacios-escala.
+</li>
+<li>
+No deben crearse nuevos extremos locales.
+</li>
+<li>
+No deben acentuarse los extremos locales, es decir, ningún extremo en una cierta escala se vuelve mayor en las escalas superior e inferior.
+</li>
+
+</ul>
+
+</li>
+
+</ul>
+<div class="Unindented">
+La construcción de los espacios-escala gaussianos se hace convolucionando la imagen inicial con un núcleo gaussiano del tipo <span class="formula"><i>g</i><span class="symbol">(</span><i>x</i>, <i>y</i>;<i>σ</i><span class="symbol">)</span> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">2<i>π</i><i>σ</i></span><span class="ignored">)</span></span><i>e</i><sup> − <span class="array"><span class="arrayrow"><span class="bracket align-left">⎛</span></span><span class="arrayrow"><span class="bracket align-left">⎝</span></span></span><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>x</i><sup>2</sup> + <i>y</i><sup>2</sup></span><span class="ignored">)/(</span><span class="denominator">2<i>σ</i></span><span class="ignored">)</span></span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎞</span></span><span class="arrayrow"><span class="bracket align-right">⎠</span></span></span></sup></span> de tal manera que <span class="formula"><i>L</i><span class="symbol">(</span>⋅, ⋅;<i>σ</i><span class="symbol">)</span> = <i>g</i><span class="symbol">(</span>⋅, ⋅;<i>σ</i><span class="symbol">)</span>*<i>f</i><span class="symbol">(</span>⋅, ⋅<span class="symbol">)</span></span>.
+</div>
+
+<hr class="footer"/>
+<div class="footer" id="generated-by">
+Document generated by <a href="http://elyxer.nongnu.org/">eLyXer 1.2.1 (2011-03-07)</a> on <span class="create-date">2011-04-08T08:16:35.535378</span>
+</div>
+</div>
+</body>
+</html>
